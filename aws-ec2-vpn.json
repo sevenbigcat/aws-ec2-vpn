@@ -26,7 +26,7 @@
   },
   "Mappings": {
     "AMIMap": {
-      "us-west-2" : { "id" : "ami-5189a661" }
+      "us-west-2" : { "id" : "ami-0d74386b" }
     },
     "Settings": {
       "VPN": {
@@ -214,7 +214,7 @@
       "Properties": {
         "IamInstanceProfile": { "Ref": "IAMProfile" },
         "ImageId": { "Fn::FindInMap" : [ "AMIMap", { "Ref" : "AWS::Region" }, "id"] },
-        "InstanceType": "t2.nano",
+        "InstanceType": "t2.micro",
         "SecurityGroups": [ { "Fn::GetAtt": [ "VpnInstancesSecurityGroup", "GroupId" ] } ],
         "UserData": {
           "Fn::Base64": {
